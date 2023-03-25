@@ -19,10 +19,18 @@ localStorage.setItem(obj.name,JSON.stringify(obj));
 }
 function showonscreen(obj){
    var parent=document.getElementById('demo');
-
+   var btn =document.createElement('button');
+   btn.appendChild(document.createTextNode("delete"));
    var  li =document.createElement('li');
    var  text=document.createTextNode(`${obj.name} ${obj.contact} ${obj.date}`);
    li.appendChild(text);
+   li.appendChild(btn);
    parent.appendChild(li);
+   btn.addEventListener('click' ,del);
+   function  del(e){
+      localStorage.removeItem(obj.name);
+      parent.removeChild(li);
+       
+   }
    
 }
