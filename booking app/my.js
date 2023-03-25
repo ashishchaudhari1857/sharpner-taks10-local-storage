@@ -9,6 +9,16 @@ function add(e){
     localStorage.setItem('name' ,cname);
  localStorage.setItem('contact',Ccontact);
  localStorage.setItem('date' ,cdate);
+    
+    const obj={
+  name:cname,
+contact:Ccontact,
+date:cdate
+};
+localStorage.setItem('userdetail',JSON.stringify(obj));
+ console.log(localStorage.getItem('userdetail'));
+
+}
 
 
 }
