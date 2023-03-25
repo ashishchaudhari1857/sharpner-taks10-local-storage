@@ -5,20 +5,24 @@ function add(e){
     var cname = document.getElementById('name').value;
     var Ccontact = document.getElementById('contact').value;
     var cdate = document.getElementById('date').value;
- console.log(cname ,Ccontact,cdate);
-    localStorage.setItem('name' ,cname);
- localStorage.setItem('contact',Ccontact);
- localStorage.setItem('date' ,cdate);
-    
-    const obj={
+  console.log(cname ,Ccontact,cdate);
+   
+  const obj={
   name:cname,
 contact:Ccontact,
 date:cdate
 };
-localStorage.setItem('userdetail',JSON.stringify(obj));
- console.log(localStorage.getItem('userdetail'));
+localStorage.setItem(obj.name,JSON.stringify(obj));
 
+   showonscreen(obj);
+  
 }
+function showonscreen(obj){
+   var parent=document.getElementById('demo');
 
-
+   var  li =document.createElement('li');
+   var  text=document.createTextNode(`${obj.name} ${obj.contact} ${obj.date}`);
+   li.appendChild(text);
+   parent.appendChild(li);
+   
 }
