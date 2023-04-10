@@ -17,8 +17,8 @@ date:cdate
 };
 localStorage.setItem('userdetail',JSON.stringify(obj));
  console.log(localStorage.getItem('userdetail'));
-
+   console.log("i just wan check");
 }
 
 
-}
+
